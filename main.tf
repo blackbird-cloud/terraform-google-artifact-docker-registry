@@ -1,4 +1,6 @@
 resource "google_artifact_registry_repository" "default" {
+  provider = google-beta
+
   repository_id = var.repository_id
   format        = "DOCKER"
   mode          = "STANDARD_REPOSITORY"
@@ -17,6 +19,8 @@ resource "google_artifact_registry_repository" "default" {
 resource "google_artifact_registry_repository_iam_member" "readers" {
   for_each = { for reader in var.readers : reader => reader }
 
+  provider = google-beta
+
   project    = google_artifact_registry_repository.default.project
   location   = google_artifact_registry_repository.default.location
   repository = google_artifact_registry_repository.default.name
@@ -26,6 +30,8 @@ resource "google_artifact_registry_repository_iam_member" "readers" {
 
 resource "google_artifact_registry_repository_iam_member" "writers" {
   for_each = { for writer in var.writers : writer => writer }
+
+  provider = google-beta
 
   project    = google_artifact_registry_repository.default.project
   location   = google_artifact_registry_repository.default.location
