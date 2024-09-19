@@ -1,6 +1,8 @@
-# <Cloud> <Main resource> Terraform module
-A Terraform module which configures your <Cloud> <Main resource>. <Relevant docs>
-[![blackbird-logo](https://raw.githubusercontent.com/blackbird-cloud/terraform-module-template/main/.config/logo_simple.png)](https://www.blackbird.cloud)
+<!-- BEGIN_TF_DOCS -->
+# Terraform Google Artifact Docker Registry Module
+A Terraform module which helps you create Artifact Registry repositories.
+
+[![blackbird-logo](https://raw.githubusercontent.com/blackbird-cloud/terraform-module-template/main/.config/logo_simple.png)](https://blackbird.cloud)
 
 ## Example
 ```hcl
@@ -12,20 +14,22 @@ A Terraform module which configures your <Cloud> <Main resource>. <Relevant docs
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4 |
+| <a name="requirement_google-beta"></a> [google-beta](#requirement\_google-beta) | ~> 4 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | n/a |
+| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | ~> 4 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [google_artifact_registry_repository.default](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/artifact_registry_repository) | resource |
-| [google_artifact_registry_repository_iam_member.readers](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/artifact_registry_repository_iam_member) | resource |
-| [google_artifact_registry_repository_iam_member.writers](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/artifact_registry_repository_iam_member) | resource |
+| [google-beta_google_artifact_registry_repository.default](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_artifact_registry_repository) | resource |
+| [google-beta_google_artifact_registry_repository_iam_member.readers](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_artifact_registry_repository_iam_member) | resource |
+| [google-beta_google_artifact_registry_repository_iam_member.writers](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_artifact_registry_repository_iam_member) | resource |
 
 ## Inputs
 
@@ -43,7 +47,9 @@ A Terraform module which configures your <Cloud> <Main resource>. <Relevant docs
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_registry"></a> [registry](#output\_registry) | n/a |
 
 ## About
 
@@ -53,4 +59,5 @@ Checkout our other :point\_right: [terraform modules](https://registry.terraform
 
 ## Copyright
 
-Copyright © 2017-2023 [Blackbird Cloud](https://www.blackbird.cloud)
+Copyright © 2017-2024 [Blackbird Cloud](https://blackbird.cloud)
+<!-- END_TF_DOCS -->
